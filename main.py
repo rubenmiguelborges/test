@@ -102,8 +102,7 @@ def main(_):
     visualize(sess, dcgan, FLAGS, OPTION)
     OPTION = 2
     visualize(sess, dcgan, FLAGS, OPTION)
-    OPTION = 3
-    visualize(sess, dcgan, FLAGS, OPTION)
+    
 
 if __name__ == '__main__':
   tf.app.run()
