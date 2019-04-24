@@ -285,6 +285,7 @@ class DCGAN(object):
         print("Epoch: [%2d/%2d] [%4d/%4d] time: %4.4f, d_loss: %.8f, g_loss: %.8f" \
           % (epoch, config.epoch, idx, batch_idxs,
             time.time() - start_time, errD_fake+errD_real, errG))
+        
 
         if np.mod(counter, 100) == 1:
           if config.dataset == 'mnist':
