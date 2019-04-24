@@ -194,7 +194,7 @@ def visualize(sess, dcgan, config, option):
       else:
         samples = sess.run(dcgan.sampler, feed_dict={dcgan.z: z_sample})
 
-      save_images(samples, [image_frame_dim, image_frame_dim], '%s/test_arange_%s_%s.png' % (sample_dir, idx, time.time()))
+      save_images(samples, [image_frame_dim, image_frame_dim], '%s/test_arange_%s_%s.png' % (sample_dir, idx, str(time.time())))
   elif option == 2:
     values = np.arange(0, 1, 1./config.batch_size)
     for idx in [random.randint(0, dcgan.z_dim - 1) for _ in xrange(dcgan.z_dim)]:
