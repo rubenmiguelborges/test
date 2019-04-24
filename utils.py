@@ -2,6 +2,7 @@
 Some codes from https://github.com/Newmu/dcgan_code
 """
 from __future__ import division
+import time
 import math
 import json
 import random
@@ -193,7 +194,7 @@ def visualize(sess, dcgan, config, option):
       else:
         samples = sess.run(dcgan.sampler, feed_dict={dcgan.z: z_sample})
 
-      save_images(samples, [image_frame_dim, image_frame_dim], '%s/test_arange_%s.png' % (sample_dir, idx))
+      save_images(samples, [image_frame_dim, image_frame_dim], '%s/test_arange_%s_%s.png' % (sample_dir, idx, time.time()))
   elif option == 2:
     values = np.arange(0, 1, 1./config.batch_size)
     for idx in [random.randint(0, dcgan.z_dim - 1) for _ in xrange(dcgan.z_dim)]:
